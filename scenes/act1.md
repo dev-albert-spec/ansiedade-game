@@ -41,7 +41,7 @@ b: por enquanto é só
 `SceneSetup.intro();`
 
 
-(#act1b)
+
 
 # act1a_productive
 
