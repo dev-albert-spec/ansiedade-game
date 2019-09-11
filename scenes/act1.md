@@ -10,11 +10,11 @@ n: _VOCÊ_ É A ANSIEDADE
 
 `hong({mouth:"0_neutral", eyes:"0_annoyed"})`
 
-h: Essa não, Eu estava esperando *não* comer em paz hoje.
+h: Essa não, eu estava esperando *não* comer em paz hoje.
 
 `hong({eyes:"0_neutral"})`
 
-n: SEU TRABALHO É PROTEGER O HUMANDO DO *PERIGO* 
+n: SEU TRABALHO COMO ANSIEDADE É PROTEGER O HUMANDO DO *PERIGO* 
 
 `bb({eyes:"look", mouth:"small_lock"})`
 
@@ -26,7 +26,7 @@ n: RÁPIDO AVISE ELE!
 
 `Game.OVERRIDE_TEXT_SPEED = 1.25;`
 
-n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
+n4: (DEIXE _SUA_ ANSIEDADE JOGAR POR VOCÊ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
 [Você esta comendo sozinho no almoço novamente](#act1a_alone)
 
@@ -50,7 +50,7 @@ b: jogo acaba aqui!
 
 `bb({mouth:"small", eyes:"narrow"})`
 
-b: você sabia que a solidão está associada à morte prematura, tanto quanto fumar 15 cigarros
+b: você sabia que a solidão está associada à morte prematura tanto quanto fumar 15 cigarros.
 
 `Game.OVERRIDE_TEXT_SPEED = 2;`
 
@@ -58,7 +58,7 @@ b: você sabia que a solidão está associada à morte prematura, tanto quanto f
 
 b: (Hospital Israelita A. Einstein)
 
-h: Ah, obrigado por citar suas fontes
+h: Ah, obrigado por citar suas fontes.
 
 `Game.OVERRIDE_TEXT_SPEED = 2;`
 
@@ -117,7 +117,7 @@ publish("hp_show");
 
 `_.seppuku = true`
 
-n: VOCÊ USA *O MEDO DE SE TORNAR ALGUÉM RUIM*
+n: VOCÊ USA *MEDO DE SE TORNAR ALGUÉM RUIM*
 
 (#act1b)
 
@@ -125,7 +125,7 @@ n: VOCÊ USA *O MEDO DE SE TORNAR ALGUÉM RUIM*
 
 `hong({eyes:"0_annoyed"})`
 
-h: VOCÊ PRECISA ESTUDAR
+h: VOCÊ PRECISA ESTUDAR, PARE DE COMER!
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
@@ -165,7 +165,7 @@ n: MAS VOCÊ AINDA NÃO SALVOU SEU HUMANO
 
 n: ESVAZIE A BARRA DE VIDA DO SEU HUMANO
 
-n: PARA PROTEGER AS NECESSIDADES FISICAS + SOCIAIS + MORAL VOCÊ PODE USAR:
+n: PARA PROTEGER AS NECESSIDADES FÍSICAS + SOCIAIS + MORAL VOCÊ PODE USAR:
 
 n: MEDO DE *SER PREJUDICADO* #harm#
 
