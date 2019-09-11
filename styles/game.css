@@ -1,0 +1,813 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+body{
+	margin:0;
+	background: #000;
+}
+
+/******************************************************************************************************
+
+MAIN GAME
+
+******************************************************************************************************/
+
+div{ /*, #game_words, #game_choices, #paused, #options, #loading, #gear, #about, #click_to_advance{*/
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+}
+
+#game_container{
+
+	position: absolute;
+	top:0; left:0; bottom:0; right:0;
+	margin: auto;
+
+	width: 360px;
+	height: 600px;
+	background: #2E2E2E;
+
+	font-size: 20px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	line-height: 1.3em;
+
+	overflow: hidden;
+
+}
+#game_words{
+	width: auto;
+	position: relative;
+	top: 80px;
+	overflow: hidden;
+}
+
+#game_words, #game_hp, #click_to_advance{
+	pointer-events: none;
+}
+
+
+/******************************************************************************************************
+
+BOTTOM TABS
+
+******************************************************************************************************/
+
+#gear, #about{
+	position: absolute;
+    bottom: 0;
+    background: #191919;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+#gear:hover, #about:hover{
+	background: #575757;
+}
+#gear > .icon, #about > .icon{
+	position: absolute;
+    width: 0;
+    height: 0;
+    top: 10px;
+}
+
+#gear{
+    left: 0;
+    border-top-right-radius: 50px;
+}
+#gear > .icon{
+    left: 4px;
+}
+#about{
+    right: 0;
+    border-top-left-radius: 50px;
+}
+#about > .icon{
+	color: rgba(255,255,255,0.4);
+	font-weight: bold;
+    right: 19px;
+}
+
+
+
+
+/******************************************************************************************************
+
+PAUSED & LOADING
+
+******************************************************************************************************/
+
+#paused, #loading{
+	display: none;
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(40,40,40,0.9);
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+#paused > div{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 260px;
+	height: 70px;
+	font-size: 69px;
+}
+#paused > div > div{
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: 1em;
+	width: 220px;
+	margin: 15px auto;
+}
+#paused[modal=yes]{
+	background: rgba(70,70,70,0.9);
+}
+#paused[modal=yes] > div{
+	display: none;
+}
+
+#loading_bar{
+	width: 150px;
+    height: 100px;
+    overflow: hidden;
+
+    position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+#loading_bar_bg{
+	width: 140px;
+	height: 0px;
+	background: #ff4040;
+	position: absolute;
+	left:5px;
+	bottom: 44px;
+}
+#loading_pic{
+	width: 100%;
+	height: 100%;
+	background: url(../sprites/ui/preloader.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: 100%;
+}
+#loading{
+	display:block;
+	background:#282828;
+}
+#loading[loaded=yes]{
+	cursor: pointer;
+	background:#282828;
+}
+#loading[loaded=yes]:hover{
+	background:#444;
+}
+#loading[loaded=yes] #loading_bar_bg{
+	display: none;
+}
+#loading[loaded=yes] #loading_pic{
+	background-position: 0px -100%;
+}
+#loading[loaded=yes]:hover #loading_pic{
+	background-position: 0px -200%;	
+}
+#loading[loaded=yes]:active #loading_pic{
+	background-position: 0px -300%;
+}
+
+
+
+/******************************************************************************************************
+
+ABOUT / END DEMO
+
+******************************************************************************************************/
+
+#end_demo{
+	
+	position: absolute;
+	top:600px;
+	left:0;
+
+	background: #2E2E2E;
+	width: 100%;
+	height: 100%;
+	color:#fff;
+	text-align: center;
+
+	/* Spring OUT only */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+
+
+}
+#end_demo_tbc{
+
+	position: absolute;
+    top: 220px;
+    display: none;
+
+	background: url(../sprites/end_demo/tbc.png);
+    background-size: 100%;
+    width: 100%;
+    height: 100px;
+}
+#end_demo_words{
+	width: 310px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+#end_demo_words a{
+	color: #ff4040;
+	font-weight: normal;
+}
+#end_demo_words a:hover{
+	color: #ff8080;
+}
+#end_demo a.no_deco{
+	text-decoration: none;
+}
+
+#the_newsletter #email{
+	width: 300px;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    font-weight: 300;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#the_newsletter #email_info{
+	position: relative;
+	width: 310px;
+	height: 60px;
+}
+#the_newsletter #gdpr{
+	position: absolute;
+    transform: scale(2);
+    top: 11px;
+    left: 3px;
+}
+#the_newsletter #consent{
+	font-size: 13px;
+    position: absolute;
+    left: 31px;
+    top: 8px;
+    width: 110px;
+    line-height: 1em;
+    text-align: left;
+}
+#the_newsletter #submit{
+	background: #ff4040;
+    position: absolute;
+    top: 6px;
+    left: 150px;
+    width: 160px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 30px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+#the_newsletter #submit:hover{
+	background: #ff7070;
+}
+#the_newsletter #submit[disabled]{
+	background: #555;
+    color: #222;
+    cursor: default;
+}
+
+#patreon{
+	width: 160px;
+    height: 56px;
+	background: url(../sprites/end_demo/patreon.png);
+    background-size: 100%;
+    margin: 5px auto 10px auto;
+    cursor: pointer;
+    position: relative;
+}
+#patreon:hover{
+	top:-2px;
+}
+
+#share{
+	overflow: hidden;
+	text-align: center;
+	padding: 2px 0;
+	margin-bottom: 3px;
+}
+#share div{
+	display: inline-block;
+	overflow: hidden;
+	width:40px; height:40px;
+	background: url(../sprites/end_demo/share.png);
+    background-size: 300%;
+    position: relative;
+    cursor: pointer;
+}
+#share div:hover{
+	top:-2px;
+}
+#share #share_fb{
+	background-position: 0px;
+}
+#share #share_tw{
+	background-position: -40px;
+}
+#share #share_em{
+	background-position: -80px;
+}
+
+#replay{
+	width:100px;
+	height: 80px;
+	background: url(../sprites/end_demo/replay.png);
+    background-size: 300%;
+    position: absolute;
+    bottom: 0;
+    left: 130px;
+    cursor: pointer;
+}
+#replay:hover{
+	background-position: -100px;
+}
+#replay:active{
+	background-position: -200px;
+}
+
+#end_demo #end_words1{				display: inline; }
+#end_demo #end_words2{				display: none; }
+#end_demo #replay{					display: block; }
+#end_demo #close_about{				display: none; }
+#end_demo .about_padding{
+	padding-top: 10px;
+}
+#end_demo #end_demo_words{
+	padding-top: 50px;
+}
+
+#end_demo[about=yes]{
+	padding-top: 25px;
+    height: 490px;
+}
+#end_demo[about=yes] #end_words1{	display: none; }
+#end_demo[about=yes] #end_words2{	display: inline; }
+#end_demo[about=yes] #replay{		display: none; }
+#end_demo[about=yes] #close_about{
+	display: block;
+	float: none;
+    width: 50px;
+    margin: 10px auto;
+}
+#end_demo[about=yes] .about_padding{
+	padding-top: 0px;
+}
+#end_demo[about=yes] #end_demo_words{
+	padding-top: 0px;
+}
+
+
+/******************************************************************************************************
+
+OPTIONS
+
+******************************************************************************************************/
+
+#options{
+	position: absolute;
+	top: 600px;
+
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+
+    background: #2e2e2e;
+	color:#fff;
+
+    /* Spring OUT only */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+
+}
+#options #volume_options{
+	display: none;
+}
+#options[past_intro=yes] #volume_options{
+	display: block;
+}
+#text_speed_preview{
+	height: 1.3em;
+}
+#close_about, #options_ok{
+	display: inline-block;
+    background: #000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 auto;
+    float: right;
+
+    position: relative;
+    top:0;
+
+    cursor: pointer;
+}
+#close_about:hover, #options_ok:hover{
+	background: #666;
+	top:-2px;
+}
+#text_automatic_toggle{
+	border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 1px 5px;
+    cursor: pointer;
+}
+#text_automatic_toggle:hover{
+	background:rgba(255,255,255,0.3);
+}
+#click_to_advance{
+	display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 254px;
+    color:#fff;
+}
+
+/*
+Slider CSS by Noah Blon
+https://codepen.io/noahblon/pen/OyajvN
+*/
+input[type="range"]{ 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    /*height: 40px;
+    width: 200px;*/
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+
+	width: 300px;
+    height: 30px;
+}
+#text_speed_slider{
+	width: 150px;
+}
+::-webkit-slider-runnable-track{
+    background: #ddd;
+}
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px; /* 1 */
+    height: 30px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw #ff4040;
+    border: 2px solid #999; /* 1 */
+}
+::-moz-range-track {
+    height: 30px;
+    background: #ddd;
+}
+::-moz-range-thumb {
+    background: #fff;
+    height: 30px;
+    width: 30px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw #ff4040;
+    box-sizing: border-box;
+}
+::-ms-fill-lower { 
+    background: #ff4040;
+}
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 30px;
+    width: 30px;
+    box-sizing: border-box;
+}
+::-ms-ticks-after { 
+    display: none; 
+}
+::-ms-ticks-before { 
+    display: none; 
+}
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 30px;
+    border: none;
+}
+::-ms-tooltip { 
+    display: none;
+}
+
+
+
+/******************************************************************************************************
+
+DIALOGUEZ
+
+******************************************************************************************************/
+
+
+.clear-both{
+	clear:both;
+}
+
+.mini-icon{
+	display: inline-block;
+	background: url(../sprites/ui/icons.png);
+	background-size: 700%;
+	width: 20px; height:20px;
+	position: relative;
+}
+.mini-icon[pic="gear"]{
+	background-position: -0px 0px;
+}
+.mini-icon[pic="about"]{
+	background-position: -100% 0px;
+}
+.mini-icon[pic="next"]{
+	background-position: -200% 0px;
+}
+.mini-icon[pic="play1"]{
+	background-position: -300% 0px;
+}
+.mini-icon[pic="play2"]{
+	background-position: -400% 0px;
+}
+.mini-icon[pic="click"]{
+	background-position: -500% 0px;
+}
+.mini-icon[pic="ok"]{
+	background-position: -600% 0px;
+}
+
+.narrator-bubble, .narrator-bubble-2, .narrator-bubble-4{
+	position: relative;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 0 10px;
+	font-size: 1.3em;
+	margin: 25px 15px;
+	font-weight: bold;
+}
+.narrator-bubble:before, .narrator-bubble-4:before{
+
+	content: '';
+	
+	position: absolute;
+	top: -9px;
+	left: 0;
+	
+	border: 6px solid #fff;
+	border-right: 0;
+
+	width: 10px;
+	height: calc(100% + 4px);
+	
+} 
+.narrator-bubble:after, .narrator-bubble-4:after{
+
+	content: '';
+	
+	position: absolute;
+	top: -9px;
+	right: 0;
+	
+	border: 6px solid #fff;
+	border-left: 0;
+
+	width: 10px;
+	height: calc(100% + 4px);
+	
+} 
+.narrator-bubble i, .narrator-bubble-2 i, .narrator-bubble-4 i{
+	font-style: normal;
+	color: #ff4040;
+}
+.narrator-bubble i.italics, .narrator-bubble-4 i.italics{
+	font-style: italic;
+	color: #fff;
+}
+.narrator-bubble-2{
+	color: #fff;
+    background: #000;
+    margin: 10px 15px;
+    padding: 15px 0;
+}
+.narrator-bubble-4{
+	font-size: 20px;
+}
+.narrator-bubble-3 {
+
+	position: relative;
+	background: #000000;
+	color: #ffffff;
+	padding: 15px;
+	margin: 5px 30px;
+
+	text-align: center;
+
+	/*opacity: 0;
+	transition: all 0.3s ease-in-out;*/
+
+}
+
+.hong-bubble {
+	position: relative;
+	background: #ffffff;
+	color: #000000;
+	border-radius: .4em;
+	padding: 15px;
+	margin: 5px 30px;
+
+	opacity: 0;
+	left: -15px;
+	transition: all 0.3s ease-in-out;
+
+	display: inline-block;
+	float: left;
+
+}
+.hong-bubble:after {
+	content: '';
+	position: absolute;
+	left: 1px;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right-color: #ffffff;
+	border-left: 0;
+	margin-top: -15px;
+	margin-left: -15px;
+}
+
+.beebee-bubble {
+	position: relative;
+	background: #000000;
+	color: #ffffff;
+	border-radius: .4em;
+	padding: 15px;
+	margin: 5px 30px;
+
+	opacity: 0;
+	left: 15px;
+	transition: all 0.3s ease-in-out;
+
+	display: inline-block;
+	float: right;
+
+}
+.beebee-bubble:after {
+	content: '';
+	position: absolute;
+	right: 1px;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-left-color: #000000;
+	border-right: 0;
+	margin-top: -15px;
+	margin-right: -15px;
+}
+
+#game_choices{
+	
+	width: 100%;
+	height: 110px;
+	padding: 20px 0; 
+	
+	position: absolute;
+	bottom:0;
+
+	background: #2E2E2E;
+	text-align: center;
+	color: #fff;
+	font-weight: lighter;
+
+}
+#game_choices > div{
+	padding: 0.25em 0;
+	cursor: pointer;
+	position: relative;
+
+	/* Spring OUT only */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition: top 500ms cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	   -moz-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	     -o-transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); 
+	        transition-timing-function: cubic-bezier(0.350, 0.005, 0.370, 1.390); /* custom */
+}
+#game_choices > div:hover{
+	background: rgba(255,255,255,0.25);
+}
+
+/***********************************/
+/***********************************/
+/***********************************/
+
+canvas{
+	border: none;
+}
+#game_canvas{
+	position: absolute;
+	top:0; left:0;
+}
+
+#game_hp{
+	position: absolute;
+	width: 360px;
+	height: 100px;
+	top:-100px;
+	left:0;
+	transition: top 0.5s ease-in-out;
+}
+
+/******************************************************************************************************
+
+CORNER TEXT
+
+******************************************************************************************************/
+
+#topleft, #bottomright{
+	width: 200px;
+    color: #555;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3em;
+    position: absolute;
+}
+#topleft a, #bottomright a{
+	color: #666;
+}
+#topleft a:hover, #bottomright a:hover{
+	color: #888;
+}
+#topleft{
+	top:10px;
+	left:10px;
+	text-align: left;
+}
+#bottomright{
+	bottom:10px;
+	right:10px;
+	text-align: right;
+}
+@media screen and (max-width: 800px) {
+	#topleft, #bottomright {
+		display: none;
+	}
+}
