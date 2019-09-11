@@ -6,7 +6,7 @@
 
 `Game.HACK_MAKE_THE_LINE_BIG=true;`
 
-[<div class="mini-icon" pic="play1"></div> PLAY! <div class="mini-icon" pic="play2"></div>](#intro-start) `publish("intro-to-game-1"); Game.OVERRIDE_CHOICE_LINE=true;`
+[<div class="mini-icon" pic="play1"></div> Jogar! <div class="mini-icon" pic="play2"></div>](#intro-start) `publish("intro-to-game-1"); Game.OVERRIDE_CHOICE_LINE=true;`
 
 # intro-start
 
@@ -14,17 +14,17 @@
 
 `clearText()`
 
-n3: Welcome! This is less of a "game", more of an interactive story. Hope you like reading, sucka
+n3: Bem vindo! isso é apenas mais uma história interativa. Espero que você goste de ler, ;3
 
-n3: So before we start, how would *you* like to read?
+n3: Mas antes de começarmos, como você gostaria de ler?
 
 `publish("show_options_bottom")`
 
 # intro-start-2
 
-n3: Great! Note: you can always change text/audio options with the ⚙ icon below.
+n3: Ótimo! Nota: você sempre pode mudar as configurações de audio no icone abaixo
 
-n3: Now, let's begin our story...
+n3: Agora, Vamos começar uma história...
 
 `clearText()`
 

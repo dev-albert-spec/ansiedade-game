@@ -181,7 +181,7 @@ Loader.addSounds([
 	subscribe("show_options_bottom", function(){
 
 		ALREADY_DID_INTRO = false;
-		optionsDOM.setAttribute("past_intro", ALREADY_DID_INTRO ? "yes" : "no");
+		optionsDOM.setAttribute("past_intro", ALREADY_DID_INTRO ? "sim" : "não");
 		
 		optionsDOM.style.top = "447px";
 		_clearAllTimeouts();
