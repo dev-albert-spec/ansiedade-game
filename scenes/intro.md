@@ -24,7 +24,7 @@ n3: Mas antes de começarmos, como você gostaria de ler?
 
 n3: Ótimo! Nota: você sempre pode mudar as configurações de audio no icone abaixo
 
-n3: Agora, Vamos começar uma história...
+n3: Agora, vamos começar a história...
 
 `clearText()`
 
@@ -32,7 +32,7 @@ n3: Agora, Vamos começar uma história...
 
 `publish("intro-to-game-2")`
 
-n2: THIS IS A HUMAN
+n2: ESSE É UM HUMANO
 
 (...600)
 

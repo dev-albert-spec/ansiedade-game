@@ -4,35 +4,41 @@
 
 (...300)
 
-n: AND THIS IS THE HUMAN'S ANXIETY
+n: ESSE É O HUMANO COM ANSIEDADE
 
-n: _YOU_ ARE THE ANXIETY
+n: _VOCÊ_ É A ANSIEDADE
 
 `hong({mouth:"0_neutral", eyes:"0_annoyed"})`
 
-h: Oh good, I was hoping to *not* eat in peace today.
+h: Essa não, Eu estava esperando *não* comer em paz hoje.
 
 `hong({eyes:"0_neutral"})`
 
-n: YOUR JOB IS TO PROTECT YOUR HUMAN FROM *DANGER*
+n: SEU TRABALHO É PROTEGER O HUMANDO DO *PERIGO* 
 
 `bb({eyes:"look", mouth:"small_lock"})`
 
-n: IN FACT, THAT SANDWICH IS PUTTING THEM IN *DANGER* RIGHT NOW
+n: E NA VERDADE, ESSE SANDUICHE ESTÁ COLACANDO ELE EM PERIGO AGORA!
 
-n: QUICK, WARN THEM!
+n: RÁPIDO AVISE ELE!
 
 `bb({eyes:"normal", mouth:"normal"})`
 
 `Game.OVERRIDE_TEXT_SPEED = 1.25;`
 
-n4: (LET _YOUR_ ANXIETY COME OUT TO PLAY! PICK WHAT _YOUR_ FEAR WOULD MOST LIKELY SAY TO YOU)
+n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
-[You're eating alone for lunch! Again!](#act1a_alone)
+[Você esta comendo sozinho no almoço novamente](#act1a_finish)
 
-[You're not productive while eating!](#act1a_productive)
+[Você não está sendo produtivo ao comer](#act1a_finish)
 
-[That white bread's bad for you!](#act1a_bread)
+[Pão de sal é ruim para você](#act1a_finish)
+
+# act1a_finish
+`bb({mouth:"small", eyes:"narrow"})`
+b: Por enquanto eu não terminei. Volte outra hora.
+
+`SceneSetup.intro();`
 
 # act1a_alone
 
