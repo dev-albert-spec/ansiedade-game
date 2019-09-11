@@ -188,7 +188,7 @@ sfx("rustle");
 
 `Game.OVERRIDE_TEXT_SPEED = 1.5;`
 
-h: você sabe que talvez tenha que olhar seu telefone
+h: Talvez eu deva olhar meu telefone
 
 ```
 sfx("rustle2");
@@ -197,7 +197,7 @@ hong({body:"phone1", mouth:"neutral", eyes:"neutral"})
 
 n: PROTEJA SEU HUMANO
 
-n: DO MUNDO. DAS OUTRAS PESSOAS. DE VOCÊ MESMO.
+n: DO MUNDO, DAS OUTRAS PESSOAS E DELE MESMO.
 
 n: BOA SORTE
 
@@ -229,7 +229,7 @@ b: E se você não for e perder seus amigos?
 
 `hong({eyes:"surprise"});`
 
-h: Além disso, você recebeu um convite ?
+h: Além disso, eu fui convidado?
 
 `bb({eyes:"narrow", mouth:"normal"});`
 
