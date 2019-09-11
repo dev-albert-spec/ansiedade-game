@@ -18,7 +18,7 @@ n: SEU TRABALHO É PROTEGER O HUMANDO DO *PERIGO*
 
 `bb({eyes:"look", mouth:"small_lock"})`
 
-n: E NA VERDADE, ESSE SANDUICHE ESTÁ COLACANDO ELE EM PERIGO AGORA!
+n: E NA VERDADE, ESSE SANDUICHE ESTÁ COLOCANDO ELE EM PERIGO AGORA!
 
 n: RÁPIDO AVISE ELE!
 
@@ -36,8 +36,8 @@ n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELME
 
 # act1a_finish
 `bb({mouth:"small", eyes:"narrow"})`
-b: Por enquanto eu não terminei. Volte outra hora.
-
+b: Por enquanto eu não terminei
+`clearText()`
 `SceneSetup.intro();`
 
 # act1a_alone
