@@ -37,7 +37,11 @@ n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELME
 # act1a_alone
 
 `bb({mouth:"small", eyes:"narrow"})`
-b: por enquanto é só
+
+b: jogo acaba aqui!
+
+(...2500)
+
 `SceneSetup.intro();`
 
 
