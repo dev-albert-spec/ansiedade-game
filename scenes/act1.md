@@ -42,6 +42,8 @@ b: jogo acaba aqui!
 
 (...2500)
 
+`clearText()`
+
 `SceneSetup.intro();`
 
 
