@@ -26,15 +26,15 @@ n: RÁPIDO AVISE ELE!
 
 `Game.OVERRIDE_TEXT_SPEED = 1.25;`
 
-n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
+n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
 [Você esta comendo sozinho no almoço novamente](#act1a_alone)
 
-[Você não está sendo produtivo ao comer](#act1a_alone)
+[Você não está sendo produtivo ao comer](#act1a_productive)
 
-[Esse pão pode te fazer mal](#act1a_alone)
+[Esse pão pode te fazer mal](#act1a_bread)
 
-# act1a_alone
+# act1a_finish
 
 `bb({mouth:"small", eyes:"narrow"})`
 
@@ -46,38 +46,65 @@ b: jogo acaba aqui!
 
 `SceneSetup.intro();`
 
+# act1a_alone
 
+`bb({mouth:"small", eyes:"narrow"})`
 
+b: você sabia que a solidão está associada à morte prematura, tanto quanto fumar 15 cigarros
+
+`Game.OVERRIDE_TEXT_SPEED = 2;`
+
+`bb({mouth:"normal", eyes:"normal_right"})`
+
+b: (Hospital Israelita A. Einstein)
+
+h: Ah, obrigado por citar suas fontes
+
+`Game.OVERRIDE_TEXT_SPEED = 2;`
+
+`bb({body:"fear", mouth:"normal", eyes:"fear"})`
+
+b: o que significa que se você não sair com alguém *agora*, você vai...
+
+`bb({body:"panic"})`
+
+b: MORREEEEEEER
+
+(...2500)
+
+`_.fifteencigs = true`
+
+(#act1b)
 
 # act1a_productive
 
-b: Whip out your laptop and do some work right now!
+b: vamos trabalhar agora mesmo!
 
 `hong({eyes:"0_annoyed"})`
 
-h: Um, I'd rather not get crumbs in my keyboa--
+h: Não, quero terminar meu sanduiche.
 
 ```
 bb({mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: If you're not productive you'll become a penniless parasite and your parents will say
+b: Se você não se tornar produtivo, você irá ficar sem dinheiro o que seus pais dirão?
 
 `bb({mouth:"small", eyes:"narrow"})`
 
-b: “you have brought dishonor to our family, now we have to all commit seppuku”
+b: “você se tornou um desempregado sem futuro”
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: and then you'll-
+b: e então você
 
 `bb({body:"panic"})`
 
-b: DIEEEEEEEEEEEEEEEEEEE
+b: MORREEEEEEEE
 
 ```
 bb({body:"normal", mouth:"normal", eyes:"normal"});
@@ -90,7 +117,7 @@ publish("hp_show");
 
 `_.seppuku = true`
 
-n: YOU USED *FEAR OF BEING A BAD PERSON*
+n: VOCÊ USA *O MEDO DE SE TORNAR ALGUÉM RUIM*
 
 (#act1b)
 
@@ -98,18 +125,18 @@ n: YOU USED *FEAR OF BEING A BAD PERSON*
 
 `hong({eyes:"0_annoyed"})`
 
-h: Have those studies been replicat--
+h: VOCÊ PRECISA ESTUDAR
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: Processed wheat will spike your blood sugar so they'll have to amputate all your limbs and then you'll-
+b: O trigo processado irá aumentar o açucar no seu sangue te causando diabetes e você vai...
 
 `bb({body:"panic"})`
 
-b: DIEEEEEEEEEEEEEEEEEEE
+b: MORREEEEEER
 
 ```
 bb({body:"normal", mouth:"normal", eyes:"normal"});
@@ -122,33 +149,33 @@ publish("hp_show");
 
 `_.whitebread = true`
 
-n: YOU USED *FEAR OF BEING HARMED*
+n: YOU TEM *MEDO DE FICAR PREJUDICADO*
 
 (#act1b)
 
 # act1b
 
-n: IT'S SUPER EFFECTIVE
+n: ISSO É SUPER EFETIVO 
 
 `bb({mouth:"smile", eyes:"smile"});`
 
-b: I am best protector!
+b: Eu sou o melhor protetor
 
-n: BUT YOU'RE NOT DONE SAVING YOUR HUMAN YET
+n: MAS VOCÊ AINDA NÃO SALVOU SEU HUMANO
 
-n: GET YOUR HUMAN'S ENERGY BAR EMPTY
+n: ESVAZIE A BARRA DE VIDA DO SEU HUMANO
 
-n: TO PROTECT YOUR HUMAN'S PHYSICAL + SOCIAL + MORAL NEEDS, YOU CAN USE:
+n: PARA PROTEGER AS NECESSIDADES FÍSICAS + SOCIAIS + MORAL VOCÊ PODE USAR:
 
-n: FEAR OF *BEING HARMED* #harm#
+n: MEDO DE *SER PREJUDICADO* #harm#
 
-n: FEAR OF *BEING UNLOVED* #alone#
+n: MEDO DE *SER AMADO* #alone#
 
-n: AND FEAR OF *BEING A BAD PERSON* #bad#
+n: E MEDO DE SE TORNAR ALGUÉM *RUIM* #bad#
 
 `Game.OVERRIDE_TEXT_SPEED = 1.25;`
 
-n4: (PRO-TIP: PLAY THE CHOICES THAT PERSONALLY HIT YOUR DEEPEST, DARKEST FEARS~)
+n4: (PRO-TIP: JOGUE AS ESCOLHAS QUE VOCÊ TEM MAIS MEDO)
 
 h: ...
 
@@ -161,18 +188,18 @@ sfx("rustle");
 
 `Game.OVERRIDE_TEXT_SPEED = 1.5;`
 
-h: you know what maybe it's time to check my phone.
+h: você sabe que talvez tenha que olhar seu telefone
 
 ```
 sfx("rustle2");
 hong({body:"phone1", mouth:"neutral", eyes:"neutral"})
 ```
 
-n: PROTECT YOUR HUMAN
+n: PROTEJA SEU HUMANO
 
-n: FROM THE WORLD. FROM OTHER PEOPLE. FROM THEMSELF.
+n: DO MUNDO. DAS OUTRAS PESSOAS. DE VOCÊ MESMO.
 
-n: GOOD LUCK
+n: BOA SORTE
 
 (...500)
 
@@ -186,33 +213,33 @@ n: GOOD LUCK
 
 `music('battle', {volume:0.5})`
 
-n: ROUND ONE: *FIGHT!*
+n: ROUND UM: *FIGHT!*
 
 `bb({body:"normal", mouth:"normal", eyes:"normal"});`
 
-h: Huh. Facebook feed says there's a party happening this weekend.
+h: O feed do facebook diz que tem uma festa nesse fim de semana
 
 `bb({eyes:"uncertain"});`
 
-b: Doesn't that weirdo throw a party *every* weekend?
+b: Mas aquele esquisito não dá uma festa todo fim de semana?
 
 `bb({eyes:"uncertain_right"});`
 
-b: Must be some underlying neurosis there.
+b: Deve acontecer algo divertido lá ?
 
 `hong({eyes:"surprise"});`
 
-h: Also, I got an invite?
+h: Além disso, você recebeu um convite ?
 
 `bb({eyes:"narrow", mouth:"normal"});`
 
-b: Well then!
+b: Então!
 
-[Say yes, or you'll die from loneliness](#act1c_loner)
+[Diga sim para não morrer de solidão](#act1a_finish)
 
-[Say no, it's probably full of lethal drugs](#act1c_drugs)
+[Diga não, provavelmente tem drogas letais](#act1a_finish)
 
-[Ignore it, you just make parties sad](#act1c_sad)
+[Ignore, você apenas vai deixar a festa mais triste](#act1a_finish)
 
 # act1c_loner
 
