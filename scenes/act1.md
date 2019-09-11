@@ -149,7 +149,7 @@ publish("hp_show");
 
 `_.whitebread = true`
 
-n: YOU TEM *MEDO DE FICAR PREJUDICADO*
+n: VOCÊ TEM *MEDO DE FICAR PREJUDICADO*
 
 (#act1b)
 
