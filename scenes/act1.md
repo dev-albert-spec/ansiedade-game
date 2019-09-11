@@ -28,56 +28,18 @@ n: RÁPIDO AVISE ELE!
 
 n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
-[Você esta comendo sozinho no almoço novamente](#act1a_prodd)
+[Você esta comendo sozinho no almoço novamente](#act1a_alone)
 
-[Você não está sendo produtivo ao comer](#act1a_prodd)
+[Você não está sendo produtivo ao comer](#act1a_alone)
 
-[Pão de sal é ruim para você](#act1a_prodd)
-
-# act1a_prodd
-`bb({mouth:"small", eyes:"narrow"})`
-b: Por enquanto eu não terminei
-`clearText()`
-`SceneSetup.intro();`
+[Esse pão pode te fazer mal](#act1a_alone)
 
 # act1a_alone
 
 `bb({mouth:"small", eyes:"narrow"})`
+b: por enquanto é só
+`SceneSetup.intro();`
 
-b: Don't you know loneliness is associated with premature death as much as smoking 15 cigarettes a day?-
-
-`Game.OVERRIDE_TEXT_SPEED = 2;`
-
-`bb({mouth:"normal", eyes:"normal_right"})`
-
-b: (Holt-Lunstad et al, 2010, PLoS Medicine)
-
-`hong({eyes:"0_annoyed"})`
-
-h: Um, thanks for citing your sources but--
-
-`Game.OVERRIDE_TEXT_SPEED = 2;`
-
-`bb({body:"fear", mouth:"normal", eyes:"fear"})`
-
-b: Which means if you don't hang out with someone *right now* you're gonna-
-
-`bb({body:"panic"})`
-
-b: DIEEEEEEEEEEEEEEEEEEE
-
-```
-bb({body:"normal", mouth:"normal", eyes:"normal"});
-hong({mouth:"0_shock", eyes:"0_shock"});
-attack("20p", "alone");
-publish("hp_show");
-```
-
-(...2500)
-
-`_.fifteencigs = true`
-
-n: YOU USED *FEAR OF BEING UNLOVED*
 
 (#act1b)
 
