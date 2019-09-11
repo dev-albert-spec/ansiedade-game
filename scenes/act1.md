@@ -28,13 +28,13 @@ n: RÁPIDO AVISE ELE!
 
 n4: (DEIXE _SUA_ ANSIEDADE SAIR PARA JOGAR ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
-[Você esta comendo sozinho no almoço novamente](#act1a_finish)
+[Você esta comendo sozinho no almoço novamente](#act1a_prodd)
 
-[Você não está sendo produtivo ao comer](#act1a_finish)
+[Você não está sendo produtivo ao comer](#act1a_prodd)
 
-[Pão de sal é ruim para você](#act1a_finish)
+[Pão de sal é ruim para você](#act1a_prodd)
 
-# act1a_finish
+# act1a_prodd
 `bb({mouth:"small", eyes:"narrow"})`
 b: Por enquanto eu não terminei
 `clearText()`
