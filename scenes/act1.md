@@ -125,18 +125,18 @@ n: VOCÊ USA *MEDO DE SE TORNAR ALGUÉM RUIM*
 
 `hong({eyes:"0_annoyed"})`
 
-h: VOCÊ PRECISA ESTUDAR, PARE DE COMER!
+h: EU PRECISO ESTUDAR, TENHO QUE DEIXAR DE COMER!
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: O trigo processado irá aumentar o açucar no seu sangue te causando diabetes e você vai...
+b: O trigo processado irá aumentar o açucar no seu sangue te causando diabetes e você vai ACABAR...
 
 `bb({body:"panic"})`
 
-b: MORREEEEEER
+b: MORREEEEEENNDO
 
 ```
 bb({body:"normal", mouth:"normal", eyes:"normal"});
@@ -169,7 +169,7 @@ n: PARA PROTEGER AS NECESSIDADES FÍSICAS + SOCIAIS + MORAL VOCÊ PODE USAR:
 
 n: MEDO DE *SER PREJUDICADO* #harm#
 
-n: MEDO DE *SER AMADO* #alone#
+n: MEDO DE *NÃO SER AMADO* #alone#
 
 n: E MEDO DE SE TORNAR ALGUÉM *RUIM* #bad#
 
@@ -225,7 +225,7 @@ b: Mas aquele esquisito não dá uma festa todo fim de semana?
 
 `bb({eyes:"uncertain_right"});`
 
-b: Deve acontecer algo divertido lá ?
+b: E se você não for e perder seus amigos?
 
 `hong({eyes:"surprise"});`
 
@@ -237,7 +237,7 @@ b: Então!
 
 [Diga sim para não morrer de solidão](#act1a_finish)
 
-[Diga não, provavelmente tem drogas letais](#act1a_finish)
+[Diga não, provavelmente tem drogas (PROERD)](#act1a_finish)
 
 [Ignore, você apenas vai deixar a festa mais triste](#act1a_finish)
 
