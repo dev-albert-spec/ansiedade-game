@@ -14,7 +14,7 @@ h: Essa não, eu estava esperando *não* comer em paz hoje.
 
 `hong({eyes:"0_neutral"})`
 
-n: SEU TRABALHO COMO ANSIEDADE É PROTEGER O HUMANDO DO *PERIGO* 
+n: SEU TRABALHO COMO ANSIEDADE É PROTEGER O HUMANO DO *PERIGO* 
 
 `bb({eyes:"look", mouth:"small_lock"})`
 
