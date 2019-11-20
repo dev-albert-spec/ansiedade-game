@@ -10,7 +10,7 @@ n: _VOCÊ_ É A ANSIEDADE
 
 `hong({mouth:"0_neutral", eyes:"0_annoyed"})`
 
-h: Essa não, eu estava esperando *não* comer em paz hoje.
+h: Essa não, eu tenho uma entrevista importante hoje.
 
 `hong({eyes:"0_neutral"})`
 
@@ -18,7 +18,7 @@ n: SEU TRABALHO COMO ANSIEDADE É PROTEGER O HUMANO DO *PERIGO*
 
 `bb({eyes:"look", mouth:"small_lock"})`
 
-n: E NA VERDADE, ESSE SANDUICHE ESTÁ COLOCANDO ELE EM PERIGO AGORA!
+n: E NA VERDADE, ESSE PENSAMENTO ESTÁ COLOCANDO ELE EM PERIGO AGORA!
 
 n: RÁPIDO AVISE ELE!
 
@@ -28,9 +28,9 @@ n: RÁPIDO AVISE ELE!
 
 n4: (DEIXE _SUA_ ANSIEDADE JOGAR POR VOCÊ! ESCOLHA O QUE O SEU MEDO PROVAVELMENTE LHE DIRIA)
 
-[Você esta comendo sozinho no almoço novamente](#act1a_alone)
+[Você não irá bem na entrevista](#act1a_alone)
 
-[Você não está sendo produtivo ao comer](#act1a_productive)
+[Eles vão te achar uma pessoa chata](#act1a_productive)
 
 [Esse pão pode te fazer mal](#act1a_bread)
 
@@ -50,7 +50,7 @@ b: jogo acaba aqui!
 
 `bb({mouth:"small", eyes:"narrow"})`
 
-b: você sabia que a solidão está associada à morte prematura tanto quanto fumar 15 cigarros.
+b: você sabia que no momento em que sentimos ansiedade começamos a nos comportar com cuidado buscando fugir da sensação desagradável.
 
 `Game.OVERRIDE_TEXT_SPEED = 2;`
 
@@ -64,11 +64,11 @@ h: Ah, obrigado por citar suas fontes.
 
 `bb({body:"fear", mouth:"normal", eyes:"fear"})`
 
-b: o que significa que se você não sair com alguém *agora*, você vai...
+b: o que significa se você não se acalmar *agora*, você vai...
 
 `bb({body:"panic"})`
 
-b: MORREEEEEEER
+b: DESISTIIIIIIR
 
 (...2500)
 
@@ -78,33 +78,33 @@ b: MORREEEEEEER
 
 # act1a_productive
 
-b: vamos trabalhar agora mesmo!
+b: vamos nos preparar agora mesmo!
 
 `hong({eyes:"0_annoyed"})`
 
-h: Não, quero terminar meu sanduiche.
+h: Não, preciso terminar meu sanduiche.
 
 ```
 bb({mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: Se você não se tornar produtivo, você irá ficar sem dinheiro o que seus pais dirão?
+b: Se você não se preparar, vão fazer perguntas que você não sabe responder.
 
 `bb({mouth:"small", eyes:"narrow"})`
 
-b: “você se tornou um desempregado sem futuro”
+b: Você vai acabar perdendo essa oportunidade
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
 Game.OVERRIDE_TEXT_SPEED = 1.5;
 ```
 
-b: e então você
+b: e então você...
 
 `bb({body:"panic"})`
 
-b: MORREEEEEEEE
+b: VAI FICAR TRISTEEEE
 
 ```
 bb({body:"normal", mouth:"normal", eyes:"normal"});
@@ -117,7 +117,7 @@ publish("hp_show");
 
 `_.seppuku = true`
 
-n: VOCÊ USA *MEDO DE SE TORNAR ALGUÉM RUIM*
+n: VOCÊ USA *MEDO DE NÃO IR BEM*
 
 (#act1b)
 
@@ -125,7 +125,7 @@ n: VOCÊ USA *MEDO DE SE TORNAR ALGUÉM RUIM*
 
 `hong({eyes:"0_annoyed"})`
 
-h: EU PRECISO ESTUDAR, TENHO QUE DEIXAR DE COMER!
+h: EU PRECISO ME PREPARAR, TENHO QUE DEIXAR DE COMER!
 
 ```
 bb({body:"fear", mouth:"normal", eyes:"fear"});
@@ -159,7 +159,7 @@ n: ISSO É SUPER EFETIVO
 
 `bb({mouth:"smile", eyes:"smile"});`
 
-b: Eu sou o melhor protetor
+b: Eu sou a ansiedade sua melhor proteção 
 
 n: MAS VOCÊ AINDA NÃO SALVOU SEU HUMANO
 
@@ -169,9 +169,9 @@ n: PARA PROTEGER AS NECESSIDADES FÍSICAS + SOCIAIS + MORAL VOCÊ PODE USAR:
 
 n: MEDO DE *SER PREJUDICADO* #harm#
 
-n: MEDO DE *NÃO SER AMADO* #alone#
+n: MEDO DE *MEDO DE NÃO GOSTAREM DE VOCÊ* #alone#
 
-n: E MEDO DE SE TORNAR ALGUÉM *RUIM* #bad#
+n: E MEDO DE SE TORNAR ALGUÉM *FRACASSADO* #bad#
 
 `Game.OVERRIDE_TEXT_SPEED = 1.25;`
 
@@ -217,29 +217,29 @@ n: ROUND UM: *FIGHT!*
 
 `bb({body:"normal", mouth:"normal", eyes:"normal"});`
 
-h: O feed do facebook diz que tem uma festa nesse fim de semana
+h: O feed do linkedin acaba de me mostrar algumas vagas
 
 `bb({eyes:"uncertain"});`
 
-b: Mas aquele esquisito não dá uma festa todo fim de semana?
+b: Mas essa vaga aparece toda semana
 
 `bb({eyes:"uncertain_right"});`
 
-b: E se você não for e perder seus amigos?
+b: E se você for e te acharem incapaz?
 
 `hong({eyes:"surprise"});`
 
-h: Além disso, eu fui convidado?
+h: Além disso, eu começei a pouco tempo?
 
 `bb({eyes:"narrow", mouth:"normal"});`
 
 b: Então!
 
-[Diga sim para não morrer de solidão](#act1a_finish)
+[Diga sim para tentar conseguir a vaga](#act1a_finish)
 
-[Diga não, provavelmente tem drogas (PROERD)](#act1a_finish)
+[Diga não, provavelmente não vai conseguir](#act1a_finish)
 
-[Ignore, você apenas vai deixar a festa mais triste](#act1a_finish)
+[Ignore, você apenas vai atrapalhar outro candidato](#act1a_finish)
 
 # act1c_loner
 

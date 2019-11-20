@@ -14,7 +14,7 @@
 
 `clearText()`
 
-n3: Bem vindo! isso é apenas mais uma história interativa. Espero que você goste de ler, ;3
+n3: Bem vindo! isso é apenas mais uma história interativa onde escolhas mudam tudo. Espero que você goste de ler amigos!
 
 n3: Mas antes de começarmos, como você gostaria de ler?
 
